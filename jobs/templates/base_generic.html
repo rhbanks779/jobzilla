@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JobZilla</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" style="color: #40e0d0; font-size: larger"
+          ><img
+            src="{% static 'images/jobzilla_icon.png' %}"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt=""
+            style="margin-right: 5px"
+          />JobZilla</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active" style="font-size: small">
+              <a class="nav-link" href="{% url 'job_list' %}">Job Listings</a>
+            </li>
+            <li class="nav-item" style="font-size: small">
+              <a class="nav-link" href="{% url 'job_create' %}">Create Job</a>
+            </li>
+          </ul>
+          <form class="form-inline ml-auto" role="search">
+            <input
+              class="form-control-sm search-input-custom mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              class="btn btn-outline-success btn-sm my-2 my-sm-0 d-flex ms-auto"
+              type="submit"
+              style="color: #40e0d0"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+       <div
+      class="p-3 mb-2 bg-light-subtle text-light-emphasis main-backround-color"
+    >
+      <div class="container mt-4">{% block content %} {% endblock %}</div>
+
+      <!-- Toast container...TODO: Still needs work -->
+    <div id="toast-container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="toast" data-delay="3000">
+                    <div class="toast-header">
+                        <strong class="mr-auto">{{ message.tags }}</strong>
+                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+                    </div>
+                    <div class="toast-body">
+                        {{ message }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+      <!-- Bootstrap Modal -->
+      <div
+        class="modal fade"
+        id="jobModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="jobModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="jobModalLabel">Job Details</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h3 id="modalJobTitle"></h3>
+              <h5 id="modalJobCompany"></h5>
+              <h5 id="modalJobLocation"></h5>
+              <p id="modalJobDescription"></p>
+              <h6 id="modalJobDeadline"></h6>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>
