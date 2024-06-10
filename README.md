@@ -6,6 +6,12 @@ JobZilla is a job listing and application platform built with Django.
 
 JobZilla allows users to create, update, and delete job postings, as well as search for jobs based on location or application deadlines. Users can also apply for jobs and receive email confirmations.
 
+## Usage
+Create Job Listings: Go to the "Create Job" page.
+View Job Listings: Go to the "Job Listings" page.
+Apply for Jobs: Click on a job listing and fill out the application form.
+Update and Delete Job Listings
+
 ## Installation and Setup
 
 ###Clone the Repository
