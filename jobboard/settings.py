@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -146,3 +146,6 @@ EMAIL_USE_TLS = True
 # Must configure below to send email confirmation
 EMAIL_HOST_USER = '******'
 EMAIL_HOST_PASSWORD = '*****'
+
+if os.getcwd() == '/app':
+    DEBUG = False
