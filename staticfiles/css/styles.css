@@ -1,0 +1,52 @@
+.navbar-custom {
+  background-color: #000000; /* Black background */
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: #40e0d0; /* Turquoise text */
+}
+.btn-custom {
+  background-color: #40e0d0; /* Turquoise background */
+  color: #000000; /* Black text */
+}
+.search-input-custom {
+  width: 150px;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+.card {
+  min-height: 18rem; /* Adjust as necessary */
+}
+.background {
+  background: #c0c0c0;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.main-backround-color {
+  background: linear-gradient(to top, #000000, #40e0d0);
+  background-repeat: repeat;
+  background-size: cover;
+}
+.content {
+  color: #171616;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+}
